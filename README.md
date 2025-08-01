@@ -4,7 +4,7 @@ This repository contains my collection of JavaScript projects – both mini and 
 
 ## 📂 Project Categories
 
-- **Mini Projects** – Small, concept-based apps (e.g., ToDo App, Calculator, Clock)
+- **Mini Projects** – Small, concept-based apps (e.g., ToDo App, Calculator, Clock, Number Predicting)
 - **Major Projects** – Full-fledged apps with UI and logic (e.g., Spotify Clone, Weather App)
 
 ## 🚧 Work in Progress
