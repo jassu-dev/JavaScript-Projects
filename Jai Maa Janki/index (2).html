@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homes | Premium Property Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            /* Change to a more modern font */
+        }
+
+        .property-card,
+        .testimonial-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Smooth transition for hover effects */
+        }
+
+        .property-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            /* Enhanced shadow on hover */
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080') no-repeat center center/cover;
+            padding: 100px 0;
+            /* Adjust padding for better hero section height */
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            /* Add subtle text shadow for better readability */
+        }
+
+        button {
+            transition: background-color 0.3s, transform 0.3s;
+            /* Smooth transition for buttons */
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            /* Slightly enlarge button on hover */
+        }
+
+        .bg-indigo-600 {
+            background-color: #4F46E5;
+            /* Adjust indigo color for better contrast */
+        }
+
+        .bg-white {
+            background-color: #000000;
+            /* Ensure white background is bright */
+        }
+
+        .text-indigo-600 {
+            color: #020208;
+            /* Adjust text color for better visibility */
+        }
+
+        .text-gray-600 {
+            color: #4B5563;
+            /* Darker gray for better contrast */
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+            /* Consistent border radius */
+        }
+
+        .grid {
+            gap: 1.5rem;
+            /* Increase gap between grid items */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-bg {
+                padding: 80px 0;
+                /* Adjust padding for smaller screens */
+            }
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background: #f8fafc;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url(Hero.png) no-repeat center center/cover;
+        }
+
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo / Org Name -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1
+                            class="text-3xl font-extrabold tracking-wide uppercase bg-gradient-to-r from-gray-800 via-gray-900 to-black text-transparent bg-clip-text">
+                            Jai Maa Janki Associates
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Navbar Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#"
+                            class="text-gray-800 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#properties"
+                            class="text-gray-800 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition">Properties</a>
+                        <a href="#services"
+                            class="text-gray-800 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition">Services</a>
+                        <a href="#about"
+                            class="text-gray-800 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                        <a href="#contact"
+                            class="text-gray-800 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition">Contact</a>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition">Get
+                            Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white pt-24 pb-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:w-1/2">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Find Your Dream Property Today</h1>
+                <p class="text-xl mb-8">Discover premium homes and commercial spaces tailored to your lifestyle and
+                    investment needs.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition">Browse
+                        Properties</button>
+                    <button
+                        class="bg-white hover:bg-gray-100 text-indigo-600 px-6 py-3 rounded-lg font-medium transition">Contact
+                        Agent</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Featured Properties</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Explore our handpicked selection of premium
+                properties that match your lifestyle</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property 1 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="7.jpeg" alt="Modern luxury apartment with floor-to-ceiling windows and city views"
+                            class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Featured</div>
+                        <div
+                            class="absolute bottom-4 left-4 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            For Sale</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2"> Apartment</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Adress</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 border-b border-gray-200 pb-4 mb-4">
+                            <div>
+                                <p class="text-gray-500 text-sm">Bedrooms</p>
+                                <p class="font-medium">3</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Bathrooms</p>
+                                <p class="font-medium">2</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Area</p>
+                                <p class="font-medium">60 sq.ft</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+
+                            <button class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                <span class="mr-2">View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="4.jpeg" alt="Contemporary beachfront villa with infinity pool and palm trees"
+                            class="w-full h-64 object-cover">
+                        <div
+                            class="absolute bottom-4 left-4 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            For Rent</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Beachfront Villa Paradise</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Miami, Florida</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 border-b border-gray-200 pb-4 mb-4">
+                            <div>
+                                <p class="text-gray-500 text-sm">Bedrooms</p>
+                                <p class="font-medium">4</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Bathrooms</p>
+                                <p class="font-medium">3.5</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Area</p>
+                                <p class="font-medium">3,500 sq.ft</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+
+                            <button class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                <span class="mr-2">View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="8.jpeg" alt="Historic mansion with classic architecture and manicured gardens"
+                            class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Featured</div>
+                        <div
+                            class="absolute bottom-4 left-4 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            For Sale</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Historic Manor House</h3>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Richmond, Virginia</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 border-b border-gray-200 pb-4 mb-4">
+                            <div>
+                                <p class="text-gray-500 text-sm">Bedrooms</p>
+                                <p class="font-medium">5</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Bathrooms</p>
+                                <p class="font-medium">4.5</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Area</p>
+                                <p class="font-medium">6,000 sq.ft</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+
+                            <button class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                <span class="mr-2">View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button
+                    class="bg-white hover:bg-gray-100 border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg font-medium transition">View
+                    All Properties</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Services</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Comprehensive real estate solutions tailored to
+                your unique needs</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Property Valuation</h3>
+                    <p class="text-gray-600">Accurate market pricing for your property with our expert valuation
+                        services and market analysis.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-file-signature text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Legal Assistance</h3>
+                    <p class="text-gray-600">Complete legal support for contracts, agreements, and all property
+                        documentation needs.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search-dollar text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Investment Consulting</h3>
+                    <p class="text-gray-600">Strategic advice to maximize returns on your real estate investments with
+                        market insights.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-holding-usd text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Rental Management</h3>
+                    <p class="text-gray-600">Comprehensive rental property services including tenant screening and
+                        maintenance coordination.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-house-user text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Home Staging</h3>
+                    <p class="text-gray-600">Professional staging services to showcase your property's potential and
+                        attract premium offers.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Bank Loan</h3>
+                    <p class="text-gray-600">Get your loan approved within just 7 days with our fast, easy, and
+                        hassle-free process. Minimal documentation. Maximum convenience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Client Testimonials</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Hear from our satisfied clients about their
+                experiences with us</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/80x80"
+                            alt="Portrait of Sarah Johnson, a satisfied client in her 40s"
+                            class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Home Buyer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Jai Maa Janki Associates made our dream of owning a house in the city
+                        a reality. Their team was patient, knowledgeable, and negotiated a price that was $50k below
+                        asking!"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/80x80"
+                            alt="Portrait of Michael Chen, a professional investor with glasses"
+                            class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Real Estate Investor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"As an investor with multiple properties, I appreciate EliteHomes'
+                        market insights. They helped me identify undervalued properties that gave me 20% ROI in the
+                        first year."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/80x80"
+                            alt="Portrait of David and Maria Rodriguez, a happy couple in their 30s"
+                            class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">David & Maria Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">First-time Buyers</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"We were nervous first-time buyers, but our agent explained everything
+                        clearly. We closed on our perfect home in just 30 days at a great price. Couldn't be happier!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+                    <p class="text-gray-600 mb-6">Jai Maa Janki Associates has grown to become one of the most trusted
+                        names in real estate, serving clients with exceptional service and results-driven strategies.
+                    </p>
+                    <p class="text-gray-600 mb-8">Our team combines local market expertise with innovative technology to
+                        deliver a seamless real estate experience whether you're buying, selling, or investing.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">Local Market Experts</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">Trusted Advisors</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">Cutting-Edge Technology</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">Client-Focused</span>
+                        </div>
+                    </div>
+                    <button
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition">Learn
+                        More About Us</button>
+                </div>
+                <div class="relative">
+                    <img src="image.png"
+                        alt="Professional team of EliteHomes agents collaborating in a modern office space"
+                        class="rounded-lg shadow-xl w-full">
+                    <div class="bg-indigo-600 text-white p-6 rounded-lg absolute -bottom-8 -right-8 max-w-xs shadow-lg">
+                        <p class="text-xl font-semibold mb-2">10+ Years</p>
+                        <p class="text-indigo-100">Of excellence in real estate service and client satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Meet Our Top Agents</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Our award-winning agents are dedicated to
+                helping you achieve your real estate goals</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md text-center pb-8">
+                    <img src="https://placehold.co/400x300"
+                        alt="Professional headshot of Robert Taylor, senior real estate agent with 12 years experience"
+                        class="w-full h-64 object-cover">
+                    <div class="px-6 mt-6">
+                        <h3 class="text-xl font-semibold mb-1">Amit</h3>
+                        <p class="text-gray-600 mb-4">Helping families find their dream homes with patience and
+                            expertise.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-md text-center pb-8">
+                    <img src="https://placehold.co/400x300"
+                        alt="Professional headshot of Amanda Rodriguez, commercial real estate expert"
+                        class="w-full h-64 object-cover">
+                    <div class="px-6 mt-6">
+                        <h3 class="text-xl font-semibold mb-1">Yash</h3>
+                        <p class="text-gray-600 mb-4">Helping families find their dream homes with patience and
+                            expertise.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-md text-center pb-8">
+                    <img src="https://placehold.co/400x300"
+                        alt="Professional headshot of James Wilson, residential property specialist with warm smile"
+                        class="w-full h-64 object-cover">
+                    <div class="px-6 mt-6">
+                        <h3 class="text-xl font-semibold mb-1">Rohit</h3>
+                        <p class="text-gray-600 mb-4">Helping families find their dream homes with patience and
+                            expertise.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-md text-center pb-8">
+                    <img src="https://placehold.co/400x300"
+                        alt="Professional headshot of Jessica Lee, rising star agent focused on first-time buyers"
+                        class="w-full h-64 object-cover">
+                    <div class="px-6 mt-6">
+                        <h3 class="text-xl font-semibold mb-1">Harsh</h3>
+                        <p class="text-gray-600 mb-4">Young professional dedicated to guiding first-time buyers through
+                            the process.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-indigo-600 text-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin Your Real Estate Journey?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Whether you're buying, selling, or investing, our team is here to
+                guide you every step of the way with expertise and care.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button>
+                    class="bg-white hover:bg-gray-100 text-indigo-600 px-8 py-3 rounded-lg font-medium
+                    transition">Schedule
+                    Consultation</button>
+                <button
+                    class="border-2 border-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-lg font-medium transition">Call:91+
+                    98XXXXXXXX </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-white text-center">
+        <div class="max-w-7xl mx-auto"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 "></div>
+        <div>
+            <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+            <p class="text-gray-600 mb-8">Have questions or ready to get started? Reach out to our team—we're here to
+                help with all your real estate needs.</p>
+            <p class="text-gray-600 mb-8"><b>E-Mail: </b> bbkbkbkbk@gmail.com</p>
+            <p class="text-gray-600 mb-8"><b>Call us: </b> 98XXXXXXXX , 98XXXXXXXX</p>
+            <p class="text-gray-600 mb-8"><b>Location: </b>XYZ,Delhi, India,110059</p>
+            <div class="space-y-6">
+                <div class="flex">
